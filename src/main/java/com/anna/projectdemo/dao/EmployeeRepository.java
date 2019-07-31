@@ -10,11 +10,6 @@ import java.util.List;
  * @author liuhy
  * @create 2019-07-31 19:01
  **/
-@Component
-public interface EmployeeDao extends ElasticsearchRepository<Employee,String> {
+public interface EmployeeRepository extends ElasticsearchRepository<Employee,String> {
 
-    //通过id查询员工
-    Employee queryByEmployeeId(String id);
-
-    void insertEmployees(List<Employee> employees);
 }

@@ -3,6 +3,7 @@ package com.anna.projectdemo.bean;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.util.Date;
 
@@ -16,17 +17,17 @@ import java.util.Date;
 public class Employee {
     @Id
     private String id;
-    @Field
+    @Field(type = FieldType.keyword)
     private String name;
-    @Field()
+    @Field(type = FieldType.Integer)
     private int age;
-    @Field
+    @Field(type = FieldType.text)
     private String position;
-    @Field
+    @Field(type=FieldType.text)
     private String country;
-    @Field
+    @Field(type = FieldType.Date)
     private Date join_date;
-    @Field
+    @Field(type = FieldType.Double)
     private double salary;
 
     //不写构造方法会报错
